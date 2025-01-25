@@ -42,44 +42,96 @@ import processing.core.PImage;
  *    text("Score: " + score, 20, 20);
  */
 public class RainGame extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 600;
+	static final int WIDTH = 600;
+	static final int HEIGHT = 600;
 
-    int score = 0;
-    int bucketWidth = 50;
-    int bucketHeight;
-    PImage bucket;
-    int y;
-    int x;
+	int score = 0;
+	int bucketWidth = 50;
+	int bucketHeight;
+	PImage bucket;
+	int y;
+	int x;
 
-    // Sets the size of your canvas
-    @Override
-    public void settings() {
-        size(WIDTH, HEIGHT);
-    }
+	boolean over = false;
+	boolean win = true;
+	// Sets the size of your canvas
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
 
-    @Override
-    public void setup() {
+	}
 
-    }
+	@Override
+	public void setup() {
+		x = (int) random(width);
+		bucket = loadImage("TinyTurtle.png");
+		bucket.resize(125, 125);
+	}
 
-    @Override
-    public void draw() {
+	@Override
+	public void draw() {
+		if(!over) {
+			background(249, 228, 188);
+			fill(15, 82, 186);
+			stroke(0, 0, 0);
+			ellipse(x, y, 25, 40);
+			y += 17;
+			if (y > height) {
+				checkCatch(x);
+				y = 0;
+				x = (int) random(width);
 
-    }
 
-    static public void main(String[] args) {
-        PApplet.main(RainGame.class.getName());
-    }
-    
-    /*********************** DO NOT MODIFY THE CODE BELOW ********************/
+			}
+			image(bucket,mouseX, height - 138);
 
-    void checkCatch(int x) {
-        if (x > mouseX && x < mouseX + bucketWidth) {
-            score++;
-        } else if (score > 0) {
-            score--;
-        }
-        println("Your score is now: " + score);
-    }
+
+			fill(0, 0, 0);
+			textSize(16);
+			text("Score: " + score, 20, 20);
+
+			if (score == 100) {
+				over = true;
+				win = true;
+				
+			}
+			else if (score == -100) {
+				over = true;
+				win = false;
+				
+
+			}
+		}else {
+			if(win) {
+				fill(0, 0, 0);
+				textSize(30);
+				background(249, 228, 188);
+				text("Congrats! \nYou beat the game!", 50, 300);
+
+			}else {
+				fill(0, 0, 0);
+				textSize(30);
+				background(249, 228, 188);
+				text("Congrats! \nYou are a failure! :)", 50, 300);
+			}
+
+		}
+	}
+
+	static public void main(String[] args) {
+		PApplet.main(RainGame.class.getName());
+
+	}
+
+	/*********************** DO NOT MODIFY THE CODE BELOW ********************/
+
+	void checkCatch(int x) {
+		if (x > mouseX && x < mouseX + 100) {
+			score++;
+		} else {
+			score--;
+		}
+		println("Your score is now: " + score);
+
+	}
 }

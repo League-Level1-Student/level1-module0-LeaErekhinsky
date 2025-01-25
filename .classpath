@@ -12,6 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/_01_methods/_1_houses/robot.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JRE [23.0.1]"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java [1.8.161.12]"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
