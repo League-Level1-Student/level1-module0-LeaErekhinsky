@@ -49,6 +49,8 @@ public class RainGame extends PApplet {
 	int bucketWidth = 50;
 	int bucketHeight;
 	PImage bucket;
+	PImage failbg;
+	PImage yaybg;
 	int y;
 	int x;
 
@@ -66,6 +68,11 @@ public class RainGame extends PApplet {
 		x = (int) random(width);
 		bucket = loadImage("TinyTurtle.png");
 		bucket.resize(125, 125);
+		yaybg = loadImage("notfailure.jpg");
+		yaybg.resize(WIDTH, HEIGHT);
+		failbg = loadImage("failure.png");
+		failbg.resize(WIDTH, HEIGHT);
+		
 	}
 
 	@Override
@@ -105,14 +112,15 @@ public class RainGame extends PApplet {
 			if(win) {
 				fill(0, 0, 0);
 				textSize(30);
-				background(249, 228, 188);
+				background(yaybg);
+				
 				text("Congrats! \nYou beat the game!", 50, 300);
 
 			}else {
-				fill(0, 0, 0);
+				fill(128, 3, 3);
 				textSize(30);
-				background(249, 228, 188);
-				text("Congrats! \nYou are a failure! :)", 50, 300);
+				background(failbg);
+				text("Congrats! \nYou are a failure! :)", 150, 525);
 			}
 
 		}
