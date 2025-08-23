@@ -26,19 +26,27 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
-
 		// 2. create a variable of type "Component" that will hold your image
-
+		
+		String url2 = "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80";
+		Component cmp;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		cmp = createImage(url2);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(cmp);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String answer = JOptionPane.showInputDialog(quizWindow, "Is the white man isolated?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (answer.equals("yes")) {
+			JOptionPane.showMessageDialog(quizWindow, "CORRECT");
+			
+		}
+		else {
+			JOptionPane.showMessageDialog(quizWindow, "INCORRECT");
+			
+		}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
