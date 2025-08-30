@@ -4,9 +4,10 @@ package _03_gui_with_help._2_photo_quiz;
  *    Level 1
  */
 
+import java.net.MalformedURLException;
 
 public class PhotoQuizRunner {
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws MalformedURLException  {
 		new PhotoQuiz().run();
 	}
 }

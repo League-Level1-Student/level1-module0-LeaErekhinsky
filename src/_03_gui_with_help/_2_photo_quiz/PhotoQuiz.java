@@ -5,6 +5,7 @@ package _03_gui_with_help._2_photo_quiz;
  */
 
 import java.awt.Component;
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
 
 public class PhotoQuiz {
 
-	public void run() {
+	public void run() throws MalformedURLException {
 
 		JFrame quizWindow = new JFrame();
 		quizWindow.setVisible(true);
@@ -29,6 +30,10 @@ public class PhotoQuiz {
 		// 2. create a variable of type "Component" that will hold your image
 		
 		String url2 = "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80";
+
+		String url3 = new File("images/randomstuff.jpg").toURI().toURL().toString();
+		
+		
 		Component cmp;
 		// 3. use the "createImage()" method below to initialize your Component
 		cmp = createImage(url2);
@@ -51,7 +56,7 @@ public class PhotoQuiz {
 
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(cmp);
 		// 10. find another image and create it (might take more than one line
 		// of code)
 
