@@ -17,14 +17,10 @@ import javax.swing.JPanel;
 
 public class BodyPartQuiz {
 
-	// You can use the celebrity photos we have placed in the recipe java
-	// package,or if you prefer, get celebrity photos from the Internet,
-	// place them in the recipe package(body_part_quiz), and change the names below.
-
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String biscuitGuy = "images/Biscuit Guy.png";
+	String catInShoes = "images/Cat in Shoes.png";
+	String shrek = "images/Shrek.png";
+	String unpleasantMule = "images/Unpleasant Mule.png";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -39,9 +35,6 @@ public class BodyPartQuiz {
 		imageIterator = imageList.iterator();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.add(panel);
-
-		// 3. Change the size of the window so that you can only see part of the
-		// image.
 		window.setSize(500, 500);
 
 		showNextImage();
@@ -50,25 +43,50 @@ public class BodyPartQuiz {
 
 	private void startQuiz() {
 
-		// 1. Make an int variable to hold the score.
-
-		// 2. Set the size of the window in the initializeGui() method 
-
-		// 4. Ask the user who this person is and store their answer
+		int score = 0;
 		String guess = JOptionPane.showInputDialog("who is this?");
-
-		// 5. Check their answer. If they guessed correctly:
-		// -- Tell them they are right and increase the score by 1
-
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
-
-		// 7. Use the showNextImage() method below to get the next image
+		if (guess.equals("biscuit guy")) {
+			System.out.println("wawwwwww ur awesome it IS biscuit guy :D");
+			score +=1;
+		}
+		else {
+			System.out.println("ur a failure this is why your father never returned with the milk its biscuit guy you idiot");
+		}
+		
 		showNextImage();
+		
+		guess = JOptionPane.showInputDialog("who is this?");
+		if (guess.equals("cat in shoes")) {
+			System.out.println("wawwwwww ur awesome it IS cat in shoes :D");
+			score +=1;
+		}
+		else {
+			System.out.println("ur a failure this is why your father never returned with the milk its cat in shoes you idiot");
+		}
+		
+		showNextImage();
+		
+		guess = JOptionPane.showInputDialog("who is this?");
+		if (guess.equals("shrek")) {
+			System.out.println("wawwwwww ur awesome it IS shrek :D");
+			score +=1;
+		}
+		else {
+			System.out.println("ur a failure this is why your father never returned with the milk its shrek you idiot");
+		}
 
-		// 8. .... repeat 4-7 for all your images.....
-
-		// 9. Show them their current score
+		showNextImage();
+		
+		guess = JOptionPane.showInputDialog("who is this?");
+		if (guess.equals("unpleasant mule")) {
+			System.out.println("wawwwwww ur awesome it IS unpleasant mule :D");
+			score +=1;
+		}
+		else {
+			System.out.println("ur a failure this is why your father never returned with the milk its unpleasant mule you idiot");
+		}
+		
+		JOptionPane.showMessageDialog(null, score);
 
 	}
 
@@ -88,13 +106,13 @@ public class BodyPartQuiz {
 	Iterator<JLabel> imageIterator;
 
 	private void initializeImageList() {
-		JLabel imageLabel = loadImage(firstImage);
+		JLabel imageLabel = loadImage(biscuitGuy);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(secondImage);
+		imageLabel = loadImage(catInShoes);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(thirdImage);
+		imageLabel = loadImage(shrek);
 		imageList.add(imageLabel);
-		imageLabel = loadImage(fourthImage);
+		imageLabel = loadImage(unpleasantMule);
 		imageList.add(imageLabel);
 	}
 
