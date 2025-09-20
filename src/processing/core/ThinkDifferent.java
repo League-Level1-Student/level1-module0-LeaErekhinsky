@@ -9,7 +9,7 @@ import java.awt.desktop.QuitResponse;
 
 import processing.core.PApplet;
 
-public class ThinkDifferent {
+/*public class ThinkDifferent {
 
   // True if user has tried to quit once. Prevents us from cancelling the quit
   // call if the sketch is held up for some reason, like an exception that's
@@ -37,4 +37,4 @@ public class ThinkDifferent {
     Desktop.getDesktop().setQuitHandler(null);
   }
 
-  // Ca
+  // Ca*/

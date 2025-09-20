@@ -7,8 +7,8 @@ import javax.swing.*;
 
 public class JackInTheBox {
 	
-	JFrame frame = new JFrame;
-	JButton button = new JButton;
+	JFrame frame = new JFrame();
+	JButton button = new JButton();
 	
 	public static void main(String[] args)  {
 		
